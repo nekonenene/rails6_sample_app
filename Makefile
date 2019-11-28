@@ -4,13 +4,12 @@ run:
 
 .PHONY: test
 test:
-	bundle exec rails db:migrate RAILS_ENV=test
 	bundle exec rails test
-	rm db/schema.rb
 
 .PHONY: db_apply
 db_apply:
 	bundle exec ridgepole --config config/database.yml --file db/Schemafile.rb --apply
+	bundle exec rails db:schema:dump
 
 .PHONY: db_dry_run
 db_dry_run:
