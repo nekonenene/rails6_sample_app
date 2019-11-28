@@ -1,0 +1,16 @@
+<h1><%= t(:show, model: t("activerecord.models.article")) %></h1>
+
+<div class="row">
+  <table>
+    <tr>
+      <td><%= Article.human_attribute_name :title %></td>
+      <td><%= @article.title %></td>
+    </tr>
+    <tr>
+      <td><%= Article.human_attribute_name :body %></td>
+      <td><%= @article.body %></td>
+    </tr>
+  </table>
+</div>
+
+<%= link_to "一覧に戻る", articles_path, class: "waves-effect waves-light btn" %>

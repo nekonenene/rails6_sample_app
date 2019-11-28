@@ -1,0 +1,33 @@
+ja:
+  list: "%{model}の一覧"
+  new: "%{model}の新規作成"
+  show: "%{model}の詳細"
+  helpers:
+    submit:
+      create: 新規作成
+      submit: 登録
+      update: 更新
+  activerecord:
+    errors:
+      template:
+        header:
+          one:   "%{model}にエラーが発生しました。"
+          other: "%{model}に%{count}つのエラーが発生しました。"
+        body: "次の項目を確認してください。"
+      messages:
+        taken: "はすでに存在します。"
+        record_invalid: "バリデーションに失敗しました。 %{errors}"
+      full_messages:
+        format: "[%{attribute}]%{message}"
+      models:
+        user:
+          attributes:
+            base:
+              restricted:  "制限付きユーザーには許可されていない動作です"
+    models:
+      article: 記事
+    attributes:
+      article:
+        id: ID
+        title: タイトル
+        body: 内容
