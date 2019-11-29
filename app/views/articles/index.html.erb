@@ -1,23 +1,29 @@
 <h1><%= t(:list, model: t("activerecord.models.article")) %></h1>
 
 <div class="row">
-  <table>
-    <tr>
-      <th><%= Article.human_attribute_name :id %></th>
-      <th><%= Article.human_attribute_name :title %></th>
-      <th><%= Article.human_attribute_name :body %></th>
-      <th></th>
-    </tr>
-
-    <% @articles.each do |article| %>
+  <div class="col s12">
+    <table>
       <tr>
-        <td><%= article.id %></td>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td><%= link_to "Show", article_path(article), class: "waves-effect waves-light btn" %></td>
+        <th><%= Article.human_attribute_name :id %></th>
+        <th><%= Article.human_attribute_name :title %></th>
+        <th><%= Article.human_attribute_name :body %></th>
+        <th></th>
       </tr>
-    <% end %>
-  </table>
+
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.id %></td>
+          <td><%= article.title %></td>
+          <td><%= article.body %></td>
+          <td><%= link_to "Show", article_path(article), class: "waves-effect waves-light btn" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
 
-<%= link_to "New", new_article_path, class: "waves-effect waves-light btn" %>
+<div class="row">
+  <div class="col s12">
+    <%= link_to "New", new_article_path, class: "waves-effect waves-light btn" %>
+  </div>
+</div>

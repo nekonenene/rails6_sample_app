@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+@import "materialize";
+
+input[type="submit"].waves-button-input {
+  color: white;
+}
