@@ -1,0 +1,17 @@
+h1 = t(:new, model: t("activerecord.models.article"))
+.row
+  = form_with model: @article, local: true, class: "col s12" do |form|
+    .row
+      .input-field.col.s12
+        = form.label :title
+        = form.text_field :title, required: true
+    .row
+      .input-field.col.s12
+        = form.label :body
+        = form.text_area :body, required: true, class: "materialize-textarea"
+    .row
+      .input-field.col.s12
+        = form.submit class: "btn waves-effect waves-light"
+.row
+  .col.s12
+    = link_to "一覧に戻る", articles_path, class: "waves-effect waves-light btn"
